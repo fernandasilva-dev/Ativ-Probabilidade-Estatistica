@@ -22,22 +22,6 @@ for i in range(quantidadeClasses):
         break
 
     limiteInferior.append(limiteSuperior[i])
-'''
-contador = 1
-for i in range(quantidadeElementos):
-    if i == 49:
-        if elementosOrdenados[i] != elementosOrdenados[i-1]:
-            fi.append(contador)
-        if elementosOrdenados[i] == elementosOrdenados[i - 1]:
-            contador += 1
-
-        break
-    if elementosOrdenados[i] != elementosOrdenados[i+1]:
-        fi.append(contador)
-        contador = 1
-    if elementosOrdenados[i] == elementosOrdenados[i+1]:
-        contador += 1
-'''
 
 for i in range(quantidadeElementos):
     for j in range(6):
@@ -47,8 +31,7 @@ for i in range(quantidadeElementos):
         if j == 5:
             if elementosOrdenados[i] >= limiteInferior[j] and elementosOrdenados[i] <= limiteSuperior[j]:
                 fi[j] += 1
-print(elementosOrdenados)
-print(fi)
+
 print("-"*23)
 print("|    CLASSES   |  fi  |")
 

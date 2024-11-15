@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 def mediaDistribuicao(limite_inferior,limite_superior, frequencia):
     somaProduto = 0
     somaFrequencia = 0
@@ -87,6 +89,22 @@ def percentil(limite_inferior, limite_superior, frequencia, p):
             percentil = L + ((posicao - F) / f) * h
             return percentil
 
+def grafico(limite_inferior,limite_superior,frequencia):
+    categoria = []
+    for i in range(len(frequencia)):
+        novosValores = str(limite_inferior[i]) + "|--" + str(limite_superior[i])
+        categoria.append(novosValores)  
+
+    for i, valor in enumerate(frequencia):
+        plt.text(i, valor + 0.2, str(valor), ha="center", fontsize=10)
+    
+    plt.bar(categoria, frequencia,color="purple")
+    plt.title("Gráfico de Frequência",fontsize=16)
+    plt.xlabel("Classes",fontsize=14)
+    plt.ylabel("Frequencia",fontsize=14)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12) 
+    plt.show()  
 
 
 limite_inferior = [300,400,500,600,700,800,900,1000,1100]
@@ -120,3 +138,5 @@ print(f"Percentil 50: {percentil50:.2f}")
 print(f"Percentil 75: {percentil75:.2f}")
 print(f"Decil 10: {decil10:.2f}")
 print(f"Decil 90: {decil90:.2f}")
+
+mostrarGrafico = grafico(limite_inferior,limite_superior,frequencia)

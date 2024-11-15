@@ -104,8 +104,14 @@ percentil75 = percentil(limite_inferior, limite_superior, frequencia, 75)
 decil10 = percentil(limite_inferior, limite_superior, frequencia, 10)
 decil90 = percentil(limite_inferior, limite_superior, frequencia, 90)
 
+print("    CLASSE    |  fi")
+for i in range(len(frequencia)):
+    if(limite_inferior[i] >= 1000 and limite_superior[i] >= 1000):
+        print(limite_inferior[i],"|--",limite_superior[i],"|",frequencia[i])
+    else:
+        print(limite_inferior[i]," |--",limite_superior[i]," |",frequencia[i])
 
-print("Media: ", media)
+print("\nMedia: ", media)
 print(f"Moda: {moda:.2f}")
 print(f"Mediana: {mediana:.2f}")
 print(f"Desvio Padrao: {dPadrao:.2f}")

@@ -6,6 +6,7 @@ quantidadeClasses = 6
 quantidadeElementos = 50
 fi = [0,0,0,0,0,0]
 
+
 def mediaDistribuicao(limite_inferior, limite_superior, frequencia):
     somaProduto = 0
     somaFrequencia = 0
@@ -148,11 +149,12 @@ media = mediaDistribuicao(limiteInferior, limiteSuperior, fi)
 mediana = medianaDistribuicao(limiteInferior, limiteSuperior, fi)
 moda = modaDistribuicao(limiteInferior, limiteSuperior, fi)
 dPadrao = desvioPadrao(limiteInferior, limiteSuperior, fi, media)
-percentil25 = percentil(limiteInferior, limiteSuperior, fi, 25)
-percentil50 = percentil(limiteInferior, limiteSuperior, fi, 50)
-percentil75 = percentil(limiteInferior, limiteSuperior, fi, 75)
-decil10 = percentil(limiteInferior, limiteSuperior, fi, 10)
-decil90 = percentil(limiteInferior, limiteSuperior, fi, 90)
+
+quatil1 = percentil(limiteInferior, limiteSuperior, fi, 25)
+percentil15 = percentil(limiteInferior, limiteSuperior, fi, 15)
+percentil90 = percentil(limiteInferior, limiteSuperior, fi, 90)
+decil30 = percentil(limiteInferior, limiteSuperior, fi, 30)
+decil70 = percentil(limiteInferior, limiteSuperior, fi, 70)
 
 print("    CLASSE    |  fi")
 for i in range(len(fi)):
@@ -165,10 +167,11 @@ print("\nMedia: ", media)
 print(f"Moda: {moda:.2f}")
 print(f"Mediana: {mediana:.2f}")
 print(f"Desvio Padrao: {dPadrao:.2f}")
-print(f"Percentil 25: {percentil25:.2f}")
-print(f"Percentil 50: {percentil50:.2f}")
-print(f"Percentil 75: {percentil75:.2f}")
-print(f"Decil 10: {decil10:.2f}")
-print(f"Decil 90: {decil90:.2f}")
+
+print(f"Quatil 1: {quatil1:.2f}")
+print(f"Percentil 15: {percentil15:.2f}")
+print(f"Percentil 90: {percentil90:.2f}")
+print(f"Decil 30: {decil30:.2f}")
+print(f"Decil 70: {decil70:.2f}")
 
 mostrarGrafico = grafico(limiteInferior, limiteSuperior, fi)

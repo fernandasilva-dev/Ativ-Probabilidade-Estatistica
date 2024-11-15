@@ -31,7 +31,6 @@ for i in range(quantidadeElementos):
         if j == 5:
             if elementosOrdenados[i] >= limiteInferior[j] and elementosOrdenados[i] <= limiteSuperior[j]:
                 fi[j] += 1
-
 print("-"*23)
 print("|    CLASSES   |  fi  |")
 
